@@ -1,0 +1,230 @@
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /*This section involves the overall style of main tags*/
+
+        * {
+            font-family: Lucida Handwriting;
+        }
+
+        body {
+            background-color: rgb(179, 94, 167);
+            background-size: cover;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: Lucida Handwriting;
+            font-size: 500%;
+        }
+
+        button {
+            font-weight: bold;
+            background-color: rgb(179, 94, 167);
+            padding: 8px 16px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 3px;
+            color: black;
+            border-color: black;
+            font-family: Monaco;
+            border-style: solid;
+        }
+
+        input {
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box
+        }
+
+        label {
+            color: white;
+        }
+
+        /*Margin, layout and design of paragraphs and structures*/
+
+        .para {
+            text-align: center;
+        }
+
+        .result {
+            font-weight: bold;
+            background-color: rgb(179, 94, 167);
+            padding: 8px 16px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 3px;
+            color: black;
+            border-color: black;
+            font-family: Monaco;
+            border-style: solid;
+        }
+
+        .pred {
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 20px;
+        }
+
+
+        /*Layout and structure of form body in page*/
+
+        div.container {
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 18px;
+            margin: 1%;
+            width: 500px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 7px;
+            border-radius: 50px 20px;
+            box-shadow: 2px 2px 15px
+        }
+
+        div.page {
+            width: 500px;
+            margin: 100px auto 0px auto;
+        }
+
+        form.info {
+            margin: 15px;
+        }
+
+        /*This section involves the design of the inputs in the form*/
+
+        input#name {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            color: black;
+            box-shadow: insert 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#age {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: insert 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#rooms {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: insert 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#bedrooms {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: insert 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#population {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: insert 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /*Responsible for shadow backgrounds*/
+
+        .table {
+            display: table;
+            margin: 0 auto;
+            margin-left: 33.85%;
+        }
+
+        ul#horizontal-list {
+            min-width: 696px;
+            list-style: none;
+        }
+
+        /*This section is concerned with the link layout*/
+
+        div.title img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        div.title h1 {
+            margin-left: 150px;
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 10%;
+            font-family: "Lucida Handwriting";
+        }
+
+    </style>
+</head>
+
+<body>
+    <!---Initialize structure of Title and house picture--->
+    <div class="title">
+        <h1>House Price Predictor</h1>
+        <img src="https://seeklogo.com/images/P/purple-house-logo-F4F2DD22E9-seeklogo.com.png" class="house" />
+    </div>
+
+    <!---Containerize main page for styling--->
+    <div class="page">
+        <!---Containerize paragraph and form for styling--->
+        <div class="container">
+            <br>
+            <!---Initialize form structure and inputs, set method to "POST"--->
+            <form action="{{url_for('predict')}}" method="post" class="info">
+                <label for="name">Average Area Income</label>
+                <input type="text" id="name" name="Average Income of Area" required="required" />
+                <br>
+                <br>
+                <label for="name">Average House Age</label>
+                <input type="text" id="age" name="Average House Age" required="required" /> 
+                <br>
+                <br>
+                <label for="name">Average Number of Rooms </label>
+                <input type="text" id="rooms" name="Average Number of Rooms " required="required" />
+                <br>
+                <br>
+                <label for="name">Average Number of Bedrooms</label>
+                <input type="text" id="bedrooms" name="Average Number of Bedrooms"  required="required" /> 
+                <br>
+                <br>
+                <label for="name">Average Area Population</label>
+                <input type="text" id="population" name="Average Area Population"  required="required" />
+                <br>
+                <br>
+                <button type="submit" class="btn">Predict</button>
+            </form>
+            <br> 
+                <!---Set placeholder for prediction output--->
+                <div class ="pred">
+                    <p class = "result"><b>{{ prediction_text }}</b></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
